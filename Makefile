@@ -1,8 +1,10 @@
 COMPILED_WASM := ./target/wasm32-unknown-unknown/release/encre_css_typst.wasm
-TYPST_SRC := $(shell find . -path ./dist -prune -o -name '*.typ' -print)
+TYPST_DEPS    := $(shell typst c lib.typ --deps - --deps-format zero --features html -f html /dev/null | tr '\0' '\n')
 
-# cool unstable solution for not using .d files
-dist/: README.md LICENSE.md typst.toml main.wasm $(TYPST_SRC)
+# cargo would be responsible for tracking the intermediates
+.PHONY: $(COMPILED_WASM)
+
+dist/: README.md LICENSE.md typst.toml $(TYPST_DEPS)
 	rm -rf ./dist
 	mkdir $@
 	cp $^ $@/
@@ -10,5 +12,5 @@ dist/: README.md LICENSE.md typst.toml main.wasm $(TYPST_SRC)
 main.wasm: $(COMPILED_WASM)
 	wasm-opt -Oz --enable-bulk-memory-opt $< -o $@
 
-$(COMPILED_WASM): $(wildcard Cargo.*) src/
+$(COMPILED_WASM):
 	cargo build --release --target wasm32-unknown-unknown
