@@ -9,8 +9,8 @@ It just works. Enter your classes as follows:
 
 ```typst
 // First import the library
-#import "@local/tailwindcss:0.1.0": *
-#show tailwind-css-init
+#import "@local/typhoon:0.1.0": *
+#show: tailwind-page
 
 // Then define your elements. No special notation needed. The plugin would
 // read the classes.
