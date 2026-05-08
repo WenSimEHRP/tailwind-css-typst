@@ -22,5 +22,5 @@
 #let tailwind-page(c, config: auto) = {
   show html.elem: update-elem
   c
-  tailwind-css(if config == auto {bytes("")} else {cbor.encode(config)})
+  tailwind-css(if config == auto { bytes("") } else { cbor.encode(config) })
 }
