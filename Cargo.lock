@@ -3,6 +3,15 @@
 version = 4
 
 [[package]]
+name = "cbor4ii"
+version = "1.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "faed1a83001dc2c9201451030cc317e35bef36c84d3781d7c5bb9f343c397da8"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "encre-css"
 version = "0.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18,8 +27,8 @@ dependencies = [
 name = "encre-css-typst"
 version = "0.1.0"
 dependencies = [
+ "cbor4ii",
  "encre-css",
- "toml",
  "typst-wasm-protocol",
 ]
 
