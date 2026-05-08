@@ -9,6 +9,7 @@ crate-type = ["cdylib"]
 [dependencies]
 encre-css = "0.20.1"
 typst-wasm-protocol = "0.0.2"
+cbor4ii = { version = "1.2.2", features = ["serde1"] }
 
 [profile.release]
 codegen-units = 1
