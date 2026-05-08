@@ -1,10 +1,9 @@
 #let _plugin = plugin("main.wasm")
 #let tailwind-classes = state("tailwind-classes", "")
-#let tailwind-config = state("tailwind-config", "")
 
-#let tailwind-css() = context {
+#let tailwind-css(config-bytes) = context {
   let classes = tailwind-classes.get()
-  let s = str(_plugin.generate(bytes(classes), bytes(tailwind-config.get())))
+  let s = str(_plugin.generate(bytes(classes), config-bytes))
   html.style(s)
 }
 
@@ -20,9 +19,8 @@
   elem
 }
 
-#let tailwind-page(c, config: "") = {
-  tailwind-config.update(it => config)
+#let tailwind-page(c, config: auto) = {
   show html.elem: update-elem
   c
-  tailwind-css()
+  tailwind-css(if config == auto {bytes("")} else {cbor.encode(config)})
 }
