@@ -9,14 +9,15 @@ It just works. Enter your classes as follows:
 
 ```typst
 // First import the library
-#import "@local/tailwindcss": *
+#import "@local/tailwindcss:0.1.0": *
+#show tailwind-css-init
 
-// Then define your elements. No special notation needed. The plugin would 
+// Then define your elements. No special notation needed. The plugin would
 // read the classes.
 #html.div(
   class: "p-10 w-full h-screen border-1 bg-neutral-300 overflow-x-scroll "
     + "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10",
-  html.div(class: "p-5 border-1 border-neutral-500 " + it)[Hi from grid!] * 5
+  html.div(class: "p-5 border-1 border-neutral-500")[Hi from grid!] * 5
 )
 ```
 
