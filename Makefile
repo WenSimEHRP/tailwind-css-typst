@@ -1,5 +1,5 @@
 COMPILED_WASM := ./target/wasm32-unknown-unknown/release/encre_css_typst.wasm
-TYPST_SRC := $(shell find . -path ./dist -prune -name '*.typ')
+TYPST_SRC := $(shell find . -path ./dist -prune -o -name '*.typ' -print)
 
 # cool unstable solution for not using .d files
 dist/: README.md LICENSE.md typst.toml main.wasm $(TYPST_SRC)
