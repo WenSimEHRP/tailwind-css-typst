@@ -4,7 +4,7 @@
 
 #let tailwind-css() = context {
   let classes = tailwind-classes.get()
-  let s = str(_plugin.generate(bytes(classes)), bytes(tailwind-config.get()))
+  let s = str(_plugin.generate(bytes(classes), bytes(tailwind-config.get())))
   html.style(s)
 }
 
@@ -20,9 +20,9 @@
   elem
 }
 
-#let tailwind-page(page, config: "") = {
-  tailwind-config.update(c => config)
+#let tailwind-page(c, config: "") = {
+  tailwind-config.update(it => config)
   show html.elem: update-elem
-  page
+  c
   tailwind-css()
 }
