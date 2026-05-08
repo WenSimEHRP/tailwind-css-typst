@@ -19,6 +19,7 @@ name = "encre-css-typst"
 version = "0.1.0"
 dependencies = [
  "encre-css",
+ "toml",
  "typst-wasm-protocol",
 ]
 
