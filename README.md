@@ -1,6 +1,7 @@
 # TailwindCSS-Typst
 
 Tailwind CSS generation for Typst. Powered by [encre-css](https://docs.rs/encre-css/latest/encre_css/).
+This plugin only works in the HTML target. It would not work in paged (i.e. PNG, PDF, SVG) targets.
 
 ## Getting started
 
