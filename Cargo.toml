@@ -1,0 +1,18 @@
+[package]
+name = "encre-css-typst"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+encre-css = "0.20.1"
+typst-wasm-protocol = "0.0.2"
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+lto = "fat"
+panic = "abort"
+strip = true
