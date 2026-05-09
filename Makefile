@@ -4,7 +4,7 @@ TYPST_DEPS    := $(shell typst c lib.typ --deps - --deps-format zero --features 
 # cargo would be responsible for tracking the intermediates
 .PHONY: $(COMPILED_WASM)
 
-dist/: README.md LICENSE.md typst.toml $(TYPST_DEPS)
+dist/: README.md LICENSE typst.toml $(TYPST_DEPS)
 	rm -rf ./dist
 	mkdir $@
 	cp $^ $@/
