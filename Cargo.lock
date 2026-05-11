@@ -24,11 +24,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "encre-css-typography"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6cd591006089928c76ab0326558c8b3d8489ec342b1b38ae215c3711fa7b8ca5"
+dependencies = [
+ "encre-css",
+]
+
+[[package]]
 name = "encre-css-typst"
 version = "0.1.0"
 dependencies = [
  "cbor4ii",
  "encre-css",
+ "encre-css-typography",
  "typst-wasm-protocol",
 ]
 
