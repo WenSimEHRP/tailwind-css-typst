@@ -1,6 +1,6 @@
 #!/usr/bin/env -S typst c --open --features html -f html
 
-#import "@local/typhoon:0.1.0": *
+#import "@local/typhoon:0.1.1": *
 #show: tailwind-page
 #import html: *
 
@@ -67,8 +67,8 @@
     ))
     div(class: "border-t")
     div(class: "text-center", [
-      Wikipedia is hosted by the Wikimedia Foundation, a non-profit organization
-      that also hosts a range of other projects. \
+      Wikipedia is hosted by the Wikimedia Foundation, a non-profit organization that also hosts a range of other
+      projects. \
       #colourful-link(href: "https://donate.wikimedia.org")[
         You can support our work with a donation.
       ]

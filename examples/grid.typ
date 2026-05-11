@@ -1,6 +1,6 @@
 #!/usr/bin/env -S typst c --open --features html -f html
 
-#import "@local/typhoon:0.1.0": *
+#import "@local/typhoon:0.1.1": *
 #show: tailwind-page
 #import html: *
 
